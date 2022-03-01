@@ -44,5 +44,5 @@ $ npm run build
 ## Links
 
 - [Slides]()
-- [Backend repository]()
+- [Curiosity's Starship Backend](https://github.com/BardoAlacran/Project-3-backend/blob/main/README.md)
 - [Deployed version]()
