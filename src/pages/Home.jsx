@@ -35,7 +35,16 @@ function Home() {
       <h1>Home</h1>
 
       {posts.map(post => {
-        return <AllPosts key={post._id} body={post.body} />;
+        return (
+          <AllPosts
+            key={post._id}
+            body={post.body}
+            user={post.user}
+            date={post.date}
+            theme={post.theme}
+            level={post.level}
+          />
+        );
       })}
     </div>
   );

@@ -1,8 +1,18 @@
-function AllPosts({ body }) {
+function AllPosts({ user, body, date, level, theme }) {
   return (
-    <>
-      <p>{body}</p>
-    </>
+    <article>
+      <h2>{user.name}</h2>
+      <div>
+        <p>{date}</p>
+      </div>
+      <div>
+        <p>{body}</p>
+      </div>
+      <div>
+        <p>{level}</p>
+        <p>{theme}</p>
+      </div>
+    </article>
   );
 }
 
