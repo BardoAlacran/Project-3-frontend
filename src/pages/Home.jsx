@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 import AllPosts from '../components/AllPosts';
 import apiService from '../services/api.service';
 
@@ -33,11 +34,11 @@ function Home() {
   return (
     <div>
       <h1>Home</h1>
-
       {posts.map(post => {
         return (
           <AllPosts
             key={post._id}
+            id={post._id}
             body={post.body}
             user={post.user}
             date={post.date}

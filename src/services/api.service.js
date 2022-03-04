@@ -40,6 +40,10 @@ class ApiService {
   getAllPosts = () => {
     return this.api.get('/');
   };
+
+  getDetailPost = id => {
+    return this.api.get(`/post/${id}`);
+  };
 }
 
 // Create one instance (object) of the service
