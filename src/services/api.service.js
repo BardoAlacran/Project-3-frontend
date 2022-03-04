@@ -44,6 +44,10 @@ class ApiService {
   getDetailPost = id => {
     return this.api.get(`/post/${id}`);
   };
+
+  addPost = () => {
+    return this.api.post('/add');
+  };
 }
 
 // Create one instance (object) of the service
