@@ -15,6 +15,9 @@ function AllPosts({ id, user, body, date, level, theme }) {
       <Link to={`/post/${id}`}>
         <button onClick={handleOnClick}>button</button>
       </Link>
+      <Link to={`/post/${id}/delete`}>
+        <button>Delete</button>
+      </Link>
     </article>
   );
 }

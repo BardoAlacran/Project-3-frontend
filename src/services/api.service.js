@@ -50,7 +50,7 @@ class ApiService {
   };
 
   deletePost = id => {
-    return this.api.post(`/post/${id}/delete`);
+    return this.api.delete(`/post/${id}/delete`);
   };
 }
 
