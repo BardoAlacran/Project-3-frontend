@@ -48,6 +48,10 @@ class ApiService {
   addPost = body => {
     return this.api.post('/add', body);
   };
+
+  deletePost = id => {
+    return this.api.post(`/post/${id}/delete`);
+  };
 }
 
 // Create one instance (object) of the service
