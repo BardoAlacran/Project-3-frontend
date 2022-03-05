@@ -52,6 +52,10 @@ class ApiService {
   deletePost = id => {
     return this.api.delete(`/post/${id}/delete`);
   };
+
+  editPost = id => {
+    return this.api.put(`/post/${id}/edit`);
+  };
 }
 
 // Create one instance (object) of the service
