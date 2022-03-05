@@ -53,8 +53,8 @@ class ApiService {
     return this.api.delete(`/post/${id}/delete`);
   };
 
-  editPost = id => {
-    return this.api.put(`/post/${id}/edit`);
+  editPost = (body, id) => {
+    return this.api.put(`/post/${id}/edit`, body);
   };
 }
 
