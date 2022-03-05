@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import AddPost from './components/AddPost';
 import DetailPost from './components/DetailPost';
 import IsAnon from './components/IsAnon';
 import IsPrivate from './components/IsPrivate';
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/post/:id" element={<DetailPost />} />
+        <Route path="/add" element={<AddPost />} />
         <Route
           path="/protected"
           element={

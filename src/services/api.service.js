@@ -45,8 +45,8 @@ class ApiService {
     return this.api.get(`/post/${id}`);
   };
 
-  addPost = () => {
-    return this.api.post('/add');
+  addPost = body => {
+    return this.api.post('/add', body);
   };
 }
 
