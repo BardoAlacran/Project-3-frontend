@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import AllPosts from '../components/AllPosts';
 import apiService from '../services/api.service';
 
@@ -32,7 +33,9 @@ function Home() {
 
   return (
     <div>
-      <h1>Home</h1>
+      <Link to={'/add'}>
+        <button className="button">Add Post</button>
+      </Link>
       {posts.map(post => {
         return (
           <AllPosts

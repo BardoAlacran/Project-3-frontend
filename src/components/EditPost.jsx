@@ -45,7 +45,7 @@ function EditPost() {
     <div className="LoginPage">
       <h1>Edit Post</h1>
 
-      <form onSubmit={handleAddSubmit}>
+      <form className="card" onSubmit={handleAddSubmit}>
         <label>Body:</label>
         <input type="text" name="body" value={editedPost.body} onChange={handlePost} />
 
@@ -55,10 +55,14 @@ function EditPost() {
         <label>Level:</label>
         <input type="text" name="level" value={editedPost.level} onChange={handlePost} />
 
-        <button type="submit">Edit</button>
+        <button className="button" type="submit">
+          Edit
+        </button>
       </form>
 
-      <Link to={'/'}>Home</Link>
+      <Link to={'/'}>
+        <button className="button">Home</button>
+      </Link>
     </div>
   );
 }

@@ -6,21 +6,29 @@ function AllPosts({ id, user, body, date, level, theme }) {
   };
 
   return (
-    <article>
-      <h2>{user.name}</h2>
+    <article className="card">
+      <h2>
+        <b>{user.name}</b>
+      </h2>
       <p>{date}</p>
       <p>{body}</p>
-      <p>{level}</p>
-      <p>{theme}</p>
-      <Link to={`/post/${id}`}>
-        <button onClick={handleOnClick}>Detail</button>
-      </Link>
-      <Link to={`/post/${id}/edit`}>
-        <button>Edit</button>
-      </Link>
-      <Link to={`/post/${id}/delete`}>
-        <button>Delete</button>
-      </Link>
+      <div className="featureContainer">
+        <p className="feature">{level}</p>
+        <p className="feature">{theme}</p>
+      </div>
+      <div className="buttonContainer">
+        <Link to={`/post/${id}`}>
+          <button className="button" onClick={handleOnClick}>
+            Detail
+          </button>
+        </Link>
+        <Link to={`/post/${id}/edit`}>
+          <button className="button">Edit</button>
+        </Link>
+        <Link to={`/post/${id}/delete`}>
+          <button className="button">Delete</button>
+        </Link>
+      </div>
     </article>
   );
 }

@@ -53,7 +53,7 @@ function AddPost() {
     <div className="LoginPage">
       <h1>Add Post</h1>
 
-      <form onSubmit={handleAddSubmit}>
+      <form className="card" onSubmit={handleAddSubmit}>
         <label>Body:</label>
         <input type="text" name="body" value={newPost.body} onChange={handlePost} />
 
@@ -63,10 +63,14 @@ function AddPost() {
         <label>Level:</label>
         <input type="text" name="level" value={newPost.level} onChange={handlePost} />
 
-        <button type="submit">Add</button>
+        <button className="button" type="submit">
+          Add
+        </button>
       </form>
 
-      <Link to={'/'}> Home</Link>
+      <Link to={'/'}>
+        <button className="button">Home</button>
+      </Link>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
-import { AuthContext } from './../context/auth.context';
+import { AuthContext } from '../context/auth.context';
 
 function Navbar() {
   // Subscribe to the AuthContext to gain access to
@@ -8,9 +8,9 @@ function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
   return (
-    <nav>
+    <nav className="navBar">
       <Link to="/">
-        <button>Navbar</button>
+        <button>Home</button>
       </Link>
 
       {isLoggedIn && (

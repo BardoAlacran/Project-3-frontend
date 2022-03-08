@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  margin: 5%;
+}
+.navBar {
+  border: 1px solid blue;
+  display: flex;
+  justify-content: space-around;
+}
+.card {
+  border: 1px solid red;
+  padding: 5%;
+}
+.buttonContainer {
+  border: 1px solid blue;
+  display: flex;
+  justify-content: space-around;
+}
+.button {
+  border: 1px solid green;
+  background: grey;
+  border-radius: 20%;
+}
+.featureContainer {
+  border: 1px solid yellow;
+  display: flex;
+  justify-content: space-around;
+}
+.feature {
+  background-color: blueviolet;
+  border-radius: 20%;
+}

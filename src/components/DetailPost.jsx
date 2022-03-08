@@ -22,17 +22,30 @@ function DetailPost() {
 
   return (
     <div>
-      <article>
-        <h2>{userPost.name}</h2>
+      <article className="card">
+        <h2>
+          <b>{userPost.name}</b>
+        </h2>
         <p>{singlePost.date}</p>
         <p>{singlePost.body}</p>
-        <p>{singlePost.level}</p>
-        <p>{singlePost.theme}</p>
+
+        <div className="featureContainer">
+          <p className="feature">{singlePost.level}</p>
+          <p className="feature">{singlePost.theme}</p>
+        </div>
+        <div className="buttonContainer">
+          <Link to={`/post/${id}/edit`}>
+            <button className="button">Edit</button>
+          </Link>
+          <Link to={`/post/${id}/delete`}>
+            <button className="button">Delete</button>
+          </Link>
+        </div>
       </article>
 
       <article>
         <Link to={'/'}>
-          <button>Home</button>
+          <button className="button">Home</button>
         </Link>
       </article>
     </div>
