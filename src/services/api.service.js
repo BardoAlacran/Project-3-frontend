@@ -56,6 +56,10 @@ class ApiService {
   editPost = (body, id) => {
     return this.api.put(`/post/${id}/edit`, body);
   };
+
+  getProfile = id => {
+    return this.api.get(`/profile/${id}`);
+  };
 }
 
 // Create one instance (object) of the service

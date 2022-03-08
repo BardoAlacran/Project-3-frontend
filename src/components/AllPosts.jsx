@@ -8,7 +8,9 @@ function AllPosts({ id, user, body, date, level, theme }) {
   return (
     <article className="card">
       <h2>
-        <b>{user.name}</b>
+        <Link to={`/profile/${user._id}`}>
+          <b>{user.name}</b>
+        </Link>
       </h2>
       <p>{date}</p>
       <p>{body}</p>

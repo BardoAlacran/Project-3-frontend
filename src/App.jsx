@@ -6,6 +6,7 @@ import EditPost from './components/EditPost';
 import IsAnon from './components/IsAnon';
 import IsPrivate from './components/IsPrivate';
 import Navbar from './components/Navbar';
+import Profile from './components/Profile';
 import { AuthProviderWrapper } from './context/auth.context';
 import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
@@ -22,6 +23,7 @@ function App() {
         <Route path="/add" element={<AddPost />} />
         <Route path="/post/:id/delete" element={<DeletePost />} />
         <Route path="/post/:id/edit" element={<EditPost />} />
+        <Route path="/profile/:id" element={<Profile />} />
         <Route
           path="/protected"
           element={
