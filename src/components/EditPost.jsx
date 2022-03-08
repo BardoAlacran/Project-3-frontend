@@ -43,7 +43,7 @@ function EditPost() {
   console.log('newPost:', editedPost);
   return (
     <div className="LoginPage">
-      <h1>Add Post</h1>
+      <h1>Edit Post</h1>
 
       <form onSubmit={handleAddSubmit}>
         <label>Body:</label>
@@ -55,10 +55,10 @@ function EditPost() {
         <label>Level:</label>
         <input type="text" name="level" value={editedPost.level} onChange={handlePost} />
 
-        <button type="submit">Submit edit</button>
+        <button type="submit">Edit</button>
       </form>
 
-      <Link to={'/'}> Home again bitch</Link>
+      <Link to={'/'}>Home</Link>
     </div>
   );
 }

@@ -66,7 +66,7 @@ function AddPost() {
         <button type="submit">Add</button>
       </form>
 
-      <Link to={'/'}> Home again bitch</Link>
+      <Link to={'/'}> Home</Link>
     </div>
   );
 }

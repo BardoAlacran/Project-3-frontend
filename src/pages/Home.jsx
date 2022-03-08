@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-
 import AllPosts from '../components/AllPosts';
 import apiService from '../services/api.service';
 

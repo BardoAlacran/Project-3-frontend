@@ -13,10 +13,10 @@ function AllPosts({ id, user, body, date, level, theme }) {
       <p>{level}</p>
       <p>{theme}</p>
       <Link to={`/post/${id}`}>
-        <button onClick={handleOnClick}>button</button>
+        <button onClick={handleOnClick}>Detail</button>
       </Link>
       <Link to={`/post/${id}/edit`}>
-        <button>edit</button>
+        <button>Edit</button>
       </Link>
       <Link to={`/post/${id}/delete`}>
         <button>Delete</button>

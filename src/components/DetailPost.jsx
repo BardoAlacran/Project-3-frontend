@@ -32,7 +32,7 @@ function DetailPost() {
 
       <article>
         <Link to={'/'}>
-          <button>To home bitch </button>
+          <button>Home</button>
         </Link>
       </article>
     </div>
