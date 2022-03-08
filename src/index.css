@@ -20,7 +20,6 @@ body {
   justify-content: space-around;
 }
 .button {
-  border: 1px solid green;
   background: grey;
   border-radius: 20%;
 }

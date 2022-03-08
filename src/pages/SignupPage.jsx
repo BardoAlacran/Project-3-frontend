@@ -34,26 +34,36 @@ function SignupPage() {
   };
 
   return (
-    <div className="SignupPage">
+    <div>
       <h1>Sign Up</h1>
 
-      <form onSubmit={handleSignupSubmit}>
+      <form className="card" onSubmit={handleSignupSubmit}>
         <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+        <input
+          type="email"
+          name="email"
+          value={email}
+          onChange={handleEmail}
+          placeholder="watcher@curiosityswatcher.com"
+        />
 
         <label>Password:</label>
         <input type="password" name="password" value={password} onChange={handlePassword} />
 
         <label>Name:</label>
-        <input type="text" name="name" value={name} onChange={handleName} />
+        <input type="text" name="name" value={name} onChange={handleName} placeholder="J. L. Piccard" />
 
-        <button type="submit">Sign Up</button>
+        <button className="button" type="submit">
+          Sign Up
+        </button>
       </form>
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
       <p>Already have account?</p>
-      <Link to={'/login'}> Login</Link>
+      <Link to={'/login'}>
+        <button className="button">Login</button>
+      </Link>
     </div>
   );
 }

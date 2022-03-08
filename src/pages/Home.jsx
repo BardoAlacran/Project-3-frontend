@@ -29,7 +29,7 @@ function Home() {
       });
   }, []);
 
-  console.log(posts);
+  console.log('posts:', posts);
 
   return (
     <div>
