@@ -60,8 +60,8 @@ class ApiService {
   getProfile = id => {
     return this.api.get(`/profile/${id}`);
   };
-  editProfile = id => {
-    return this.api.put(`/profile/${id}/edit`);
+  editProfile = (body, id) => {
+    return this.api.put(`/profile/${id}/edit`, body);
   };
 }
 

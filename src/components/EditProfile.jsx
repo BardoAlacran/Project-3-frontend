@@ -29,9 +29,9 @@ function EditProfile() {
     e.preventDefault();
 
     apiService
-      .editPost(editedProfile, id)
+      .editProfile(editedProfile, id)
       .then(profileEdited => {
-        console.log(profileEdited);
+        console.log('profile edited:', profileEdited);
 
         navigate(`/profile/${profileEdited.data._id}`);
       })
@@ -40,9 +40,9 @@ function EditProfile() {
       });
   };
 
-  console.log('newProfile:', editedProfile);
+  console.log('editedProfile:', editedProfile);
   return (
-    <div className="LoginPage">
+    <div>
       <h1>Edit Profile</h1>
 
       <form className="card" onSubmit={handleEditSubmit}>
@@ -50,7 +50,7 @@ function EditProfile() {
         <input type="text" name="name" value={editedProfile.name} onChange={handleProfile} />
 
         <button className="button" type="submit">
-          Edit
+          Submit Edit
         </button>
       </form>
 

@@ -3,6 +3,7 @@ import AddPost from './components/AddPost';
 import DeletePost from './components/DeletePost';
 import DetailPost from './components/DetailPost';
 import EditPost from './components/EditPost';
+import EditProfile from './components/EditProfile';
 import IsAnon from './components/IsAnon';
 import IsPrivate from './components/IsPrivate';
 import Navbar from './components/Navbar';
@@ -24,6 +25,7 @@ function App() {
         <Route path="/post/:id/delete" element={<DeletePost />} />
         <Route path="/post/:id/edit" element={<EditPost />} />
         <Route path="/profile/:id" element={<Profile />} />
+        <Route path="/profile/:id/edit" element={<EditProfile />} />
         <Route
           path="/protected"
           element={
