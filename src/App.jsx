@@ -8,6 +8,7 @@ import IsAnon from './components/IsAnon';
 import IsPrivate from './components/IsPrivate';
 import Navbar from './components/Navbar';
 import Profile from './components/Profile';
+import UserProfile from './components/UserProfile';
 import { AuthProviderWrapper } from './context/auth.context';
 import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
@@ -25,7 +26,8 @@ function App() {
         <Route path="/post/:id/delete" element={<DeletePost />} />
         <Route path="/post/:id/edit" element={<EditPost />} />
         <Route path="/profile/:id" element={<Profile />} />
-        <Route path="/profile/:id/edit" element={<EditProfile />} />
+        <Route path="/profile/edit" element={<EditProfile />} />
+        <Route path="/profile/userprofile" element={<UserProfile />} />
         <Route
           path="/protected"
           element={

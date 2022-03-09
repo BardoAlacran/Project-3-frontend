@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import apiService from '../services/api.service';
 
 function Profile() {
@@ -26,9 +26,6 @@ function Profile() {
           <b>{profile.name}</b>
         </h1>
       </article>
-      <Link to={`/profile/${id}/edit`}>
-        <button className="button">Edit Profile</button>
-      </Link>
     </div>
   );
 }

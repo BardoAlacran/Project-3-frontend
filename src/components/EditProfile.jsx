@@ -1,18 +1,17 @@
-import { useEffect, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/auth.context';
 import apiService from '../services/api.service';
-
 function EditProfile() {
+  const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const [editedProfile, setEditedProfile] = useState({
-    email: '',
-    password: '',
-    name: '',
+    email: user.email,
+    name: user.name,
   });
-  const { id } = useParams();
 
   useEffect(() => {
-    apiService.getProfile(id).then(response => {
+    apiService.getProfile(user._id).then(response => {
       setEditedProfile(response.data);
     });
   }, []);
@@ -29,17 +28,17 @@ function EditProfile() {
     e.preventDefault();
 
     apiService
-      .editProfile(editedProfile, id)
+      .editProfile(editedProfile)
       .then(profileEdited => {
         console.log('profile edited:', profileEdited);
 
-        navigate(`/profile/${profileEdited.data._id}`);
+        navigate('/profile/userprofile');
       })
       .catch(error => {
         console.log(error);
       });
   };
-
+  console.log('user:', user);
   console.log('editedProfile:', editedProfile);
   return (
     <div>
