@@ -13,11 +13,11 @@ function AllPosts({ id, user, body, date, level, theme }) {
         </Link>
       </h2>
       <p>{date}</p>
-      <p>{body}</p>
       <div className="featureContainer">
         <p className="feature">{level}</p>
         <p className="feature">{theme}</p>
       </div>
+      <p>{body}</p>
       <div className="buttonContainer">
         <Link to={`/post/${id}`}>
           <button className="button" onClick={handleOnClick}>

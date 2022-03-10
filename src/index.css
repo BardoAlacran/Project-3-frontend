@@ -2,8 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgb(15, 15, 15), rgb(12, 1, 77)) no-repeat;
+  background-attachment: fixed;
+  background-size: 100% auto;
+}
 body {
   margin: 5%;
+  color: rgb(163, 163, 157);
 }
 .navBar {
   border: 1px solid blue;
@@ -11,8 +19,10 @@ body {
   justify-content: space-around;
 }
 .card {
-  border: 1px solid red;
+  border: 1px solid beige;
+  border-radius: 5%;
   padding: 5%;
+  margin-bottom: 5px;
 }
 .buttonContainer {
   border: 1px solid blue;
@@ -24,7 +34,8 @@ body {
   border-radius: 20%;
 }
 .featureContainer {
-  border: 1px solid yellow;
+  border: px solid beige;
+  border-radius: 3%;
   display: flex;
   justify-content: space-around;
 }

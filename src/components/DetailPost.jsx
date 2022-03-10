@@ -27,12 +27,12 @@ function DetailPost() {
           <b>{userPost.name}</b>
         </h2>
         <p>{singlePost.date}</p>
-        <p>{singlePost.body}</p>
-
         <div className="featureContainer">
           <p className="feature">{singlePost.level}</p>
           <p className="feature">{singlePost.theme}</p>
         </div>
+        <p>{singlePost.body}</p>
+
         <div className="buttonContainer">
           <Link to={`/post/${id}/edit`}>
             <button className="button">Edit</button>
