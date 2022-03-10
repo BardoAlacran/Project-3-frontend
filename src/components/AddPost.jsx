@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import apiService from '../services/api.service';
 
 function AddPost() {
@@ -67,10 +67,6 @@ function AddPost() {
           Add
         </button>
       </form>
-
-      <Link to={'/'}>
-        <button className="button">Home</button>
-      </Link>
     </div>
   );
 }

@@ -54,12 +54,6 @@ function DeletePost() {
             <button className="button">No</button>
           </Link>
         </div>
-
-        <article>
-          <Link to={'/'}>
-            <button className="button">Home</button>
-          </Link>
-        </article>
       </div>
     </>
   );

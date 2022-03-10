@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import apiService from '../services/api.service';
 
 function EditPost() {
@@ -59,10 +59,6 @@ function EditPost() {
           Edit
         </button>
       </form>
-
-      <Link to={'/'}>
-        <button className="button">Home</button>
-      </Link>
     </div>
   );
 }

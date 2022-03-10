@@ -24,7 +24,9 @@ function DetailPost() {
     <div>
       <article className="card">
         <h2>
-          <b>{userPost.name}</b>
+          <Link to={`/profile/${userPost._id}`}>
+            <b>{userPost.name}</b>
+          </Link>
         </h2>
         <p>{singlePost.date}</p>
         <div className="featureContainer">
@@ -41,12 +43,6 @@ function DetailPost() {
             <button className="button">Delete</button>
           </Link>
         </div>
-      </article>
-
-      <article>
-        <Link to={'/'}>
-          <button className="button">Home</button>
-        </Link>
       </article>
     </div>
   );
