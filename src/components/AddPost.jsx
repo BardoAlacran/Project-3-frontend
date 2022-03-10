@@ -50,7 +50,7 @@ function AddPost() {
 
   console.log('newPost:', newPost);
   return (
-    <div className="LoginPage">
+    <div className="Container">
       <h1>Add Post</h1>
 
       <form className="card" onSubmit={handleAddSubmit}>

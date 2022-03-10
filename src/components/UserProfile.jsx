@@ -5,7 +5,7 @@ import apiService from '../services/api.service';
 
 function UserProfile() {
   const [profile, setProfile] = useState([]);
-  const { user, isLoggedIn } = useContext(AuthContext);
+  const { user, isLoggedIn, logOutUser } = useContext(AuthContext);
 
   useEffect(() => {
     apiService
@@ -22,16 +22,21 @@ function UserProfile() {
   console.log(profile);
 
   return (
-    <div>
+    <div className="Container">
       <article className="card">
         <h1>
           <b>{profile.name}</b>
         </h1>
       </article>
       {isLoggedIn && (
-        <Link to={`/profile/edit`}>
-          <button className="button">Edit Profile</button>
-        </Link>
+        <div className="buttonContainer">
+          <Link to={`/profile/edit`}>
+            <button className="button">Edit Profile</button>
+          </Link>
+          <button className="button" onClick={logOutUser}>
+            Logout
+          </button>
+        </div>
       )}
     </div>
   );

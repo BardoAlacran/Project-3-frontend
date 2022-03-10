@@ -21,7 +21,7 @@ function DetailPost() {
   }, []);
 
   return (
-    <div>
+    <div className="Container">
       <article className="card">
         <h2>
           <Link to={`/profile/${userPost._id}`}>

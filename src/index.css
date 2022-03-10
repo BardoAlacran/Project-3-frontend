@@ -12,11 +12,25 @@ html {
 body {
   margin: 5%;
   color: rgb(163, 163, 157);
+  align-items: center;
 }
 .navBar {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 5%;
+  overflow: hidden;
+  background: rgb(68, 2, 221);
+}
+.Container {
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
 .card {
   border: 1px solid beige;
@@ -25,13 +39,14 @@ body {
   margin-bottom: 5px;
 }
 .buttonContainer {
-  border: 1px solid blue;
   display: flex;
   justify-content: space-around;
+  margin-top: 10px;
 }
 .button {
-  background: grey;
-  border-radius: 20%;
+  /* background: rgb(49, 49, 49); */
+  color: aqua;
+  margin: 2px;
 }
 .featureContainer {
   border: px solid beige;
@@ -40,8 +55,12 @@ body {
   justify-content: space-around;
 }
 .feature {
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
   border-radius: 20%;
+  color: green;
+}
+.warning {
+  color: red;
 }
 
 /* https://dribbble.com/shots/15855392-NASA-Mobile-APP-Concept */

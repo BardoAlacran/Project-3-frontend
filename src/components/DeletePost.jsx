@@ -33,29 +33,27 @@ function DeletePost() {
   };
 
   return (
-    <>
-      <div>
-        <h1>Are you sure to delete this post?</h1>
-        <article className="card">
-          <h2>
-            <b>{userPost.name}</b>
-          </h2>
-          <p>{singlePost.date}</p>
-          <p>{singlePost.body}</p>
-          <p>{singlePost.level}</p>
-          <p>{singlePost.theme}</p>
-        </article>
+    <div className="Container">
+      <h1 className="warning">Are you sure to delete this post?</h1>
+      <article className="card">
+        <h2>
+          <b>{userPost.name}</b>
+        </h2>
+        <p>{singlePost.date}</p>
+        <p>{singlePost.body}</p>
+        <p>{singlePost.level}</p>
+        <p>{singlePost.theme}</p>
+      </article>
 
-        <div className="buttonContainer">
-          <button className="button" onClick={handleDelete}>
-            Yes
-          </button>
-          <Link to={`/post/${id}`}>
-            <button className="button">No</button>
-          </Link>
-        </div>
+      <div className="buttonContainer">
+        <button className="button" onClick={handleDelete}>
+          Yes
+        </button>
+        <Link to={`/post/${id}`}>
+          <button className="button">No</button>
+        </Link>
       </div>
-    </>
+    </div>
   );
 }
 

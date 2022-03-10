@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import apiService from '../services/api.service';
 
 function EditPost() {
@@ -42,7 +42,7 @@ function EditPost() {
 
   console.log('newPost:', editedPost);
   return (
-    <div className="LoginPage">
+    <div className="Container">
       <h1>Edit Post</h1>
 
       <form className="card" onSubmit={handleAddSubmit}>
@@ -59,6 +59,10 @@ function EditPost() {
           Edit
         </button>
       </form>
+
+      <Link to={`/post/${id}`}>
+        <button className="button">Back to detail</button>
+      </Link>
     </div>
   );
 }

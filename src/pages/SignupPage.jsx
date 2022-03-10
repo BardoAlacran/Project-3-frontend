@@ -34,7 +34,7 @@ function SignupPage() {
   };
 
   return (
-    <div>
+    <div className="Container">
       <h1>Sign Up</h1>
 
       <form className="card" onSubmit={handleSignupSubmit}>

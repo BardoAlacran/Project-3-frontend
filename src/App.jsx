@@ -19,6 +19,7 @@ function App() {
   return (
     <AuthProviderWrapper>
       <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/post/:id" element={<DetailPost />} />

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
 import apiService from '../services/api.service';
 function EditProfile() {
@@ -41,7 +41,7 @@ function EditProfile() {
   console.log('user:', user);
   console.log('editedProfile:', editedProfile);
   return (
-    <div>
+    <div className="Container">
       <h1>Edit Profile</h1>
 
       <form className="card" onSubmit={handleEditSubmit}>
@@ -52,10 +52,6 @@ function EditProfile() {
           Submit Edit
         </button>
       </form>
-
-      <Link to={'/'}>
-        <button className="button">Home</button>
-      </Link>
     </div>
   );
 }
