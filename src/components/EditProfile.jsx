@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/auth.context';
 import apiService from '../services/api.service';
+
 function EditProfile() {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ function EditProfile() {
         console.log(error);
       });
   };
-  console.log('user:', user);
+  // console.log('user:', user);
   console.log('editedProfile:', editedProfile);
   return (
     <div className="Container">
