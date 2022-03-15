@@ -7,6 +7,7 @@ import AllPosts from './AllPosts';
 function UserProfile() {
   const [profile, setProfile] = useState([]);
   const [posts, setPosts] = useState([]);
+  const [favs, setFavs] = useState([]);
   const { user, isLoggedIn, logOutUser } = useContext(AuthContext);
 
   useEffect(() => {
@@ -23,7 +24,7 @@ function UserProfile() {
     apiService
       .getOwnPosts({ user: user._id })
       .then(response => {
-        console.log('1 data:', response.data);
+        // console.log('1 data:', response.data);
         setPosts(response.data);
       })
       .catch(error => {
@@ -32,7 +33,19 @@ function UserProfile() {
   }, [user._id]);
   // console.log('user:', user._id);
   // console.log('profile:', profile);
-  console.log('2 posts:', posts);
+  // console.log('2 posts:', posts);
+  // console.log('user id:', user._id);
+
+  useEffect(() => {
+    apiService
+      .getUserFavs()
+      .then(userFavs => {
+        setFavs(userFavs.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  });
 
   return (
     <div className="Container">
@@ -58,12 +71,15 @@ function UserProfile() {
             key={post._id}
             id={post._id}
             body={post.body}
-            user={post.user}
+            userPost={post.user}
             date={post.date}
             theme={post.theme}
             level={post.level}
           />
         );
+      })}
+      {favs.map(fav => {
+        return <h1 key={fav._id}>{fav._id}</h1>;
       })}
     </div>
   );
