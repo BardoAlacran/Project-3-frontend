@@ -1,8 +1,7 @@
 import apiService from '../services/api.service';
 
 function RemoveFav({ id, onRemove }) {
-  const handleOnClick = juan => {
-    console.log('juan:', juan);
+  const handleOnClick = () => {
     apiService
       .removeFav(id)
       .then(response => {

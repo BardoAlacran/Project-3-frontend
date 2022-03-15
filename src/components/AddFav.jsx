@@ -2,9 +2,7 @@ import apiService from '../services/api.service';
 
 function AddFav({ id, onAdd }) {
   // console.log('props id:', id);
-  const handleOnClick = pepe => {
-    console.log('pepe:', pepe);
-
+  const handleOnClick = () => {
     apiService
       .addFav(id)
       .then(response => {

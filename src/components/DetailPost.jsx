@@ -27,11 +27,7 @@ function DetailPost() {
     apiService
       .getIsFav(id)
       .then(response => {
-        if (response.data.post === id) {
-          setIsFav(true);
-        } else {
-          setIsFav(false);
-        }
+        setIsFav(response.data.isFavorite);
       })
       .catch(error => {
         console.log(error);
