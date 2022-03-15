@@ -18,7 +18,7 @@ function DetailPost() {
       .catch(error => {
         console.log(error);
       });
-  }, []);
+  }, [id]);
 
   return (
     <div className="Container">

@@ -19,7 +19,7 @@ function DeletePost() {
       .catch(error => {
         console.log(error);
       });
-  }, []);
+  }, [id]);
 
   const handleDelete = () => {
     apiService

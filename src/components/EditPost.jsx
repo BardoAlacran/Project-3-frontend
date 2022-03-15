@@ -15,7 +15,7 @@ function EditPost() {
     apiService.getDetailPost(id).then(response => {
       setEditedPost(response.data);
     });
-  }, []);
+  }, [id]);
 
   const handlePost = e => {
     setEditedPost(prev => {

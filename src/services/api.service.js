@@ -40,6 +40,9 @@ class ApiService {
   getAllPosts = () => {
     return this.api.get('/');
   };
+  getOwnPosts = () => {
+    return this.api.get('/posts');
+  };
 
   getDetailPost = id => {
     return this.api.get(`/post/${id}`);
