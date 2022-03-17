@@ -10,29 +10,31 @@ function DetailPost() {
   const [isFav, setIsFav] = useState(false);
   const { id } = useParams();
 
-  useEffect(() => {
-    apiService
-      .getDetailPost(id)
-      .then(response => {
-        setSinglePost(response.data);
-        const { user } = response.data;
-        setUserPost(user);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }, [id]);
+  const getDetail = async () => {
+    try {
+      const detail = await apiService.getDetailPost(id);
+      setSinglePost(detail.data);
+      const { user } = detail.data;
+      setUserPost(user);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const isFavourite = async () => {
+    try {
+      const response = await apiService.getIsFav(id);
+      setIsFav(response.data.isFavorite);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
-    apiService
-      .getIsFav(id)
-      .then(response => {
-        setIsFav(response.data.isFavorite);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }, [id]);
+    getDetail();
+    isFavourite();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleAddFav = () => {
     setIsFav(true);
