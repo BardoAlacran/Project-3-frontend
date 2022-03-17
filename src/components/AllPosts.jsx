@@ -7,16 +7,19 @@ import RemoveFav from './RemoveFav';
 function AllPosts({ id, userPost, body, date, level, theme }) {
   const [isFav, setIsFav] = useState(false);
 
+  const isFavourite = async () => {
+    try {
+      const response = await apiService.getIsFav(id);
+      setIsFav(response.data.isFavorite);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
-    apiService
-      .getIsFav(id)
-      .then(response => {
-        setIsFav(response.data.isFavorite);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  });
+    isFavourite();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleAddFav = () => {
     setIsFav(true);
