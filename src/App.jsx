@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import AddPost from './components/AddPost';
 import DeletePost from './components/DeletePost';
@@ -16,6 +17,10 @@ import Protected from './pages/Protected';
 import SignupPage from './pages/SignupPage';
 
 function App() {
+  useEffect(() => {
+    document.title = "Cuariosity's Starship";
+  }, []);
+
   return (
     <AuthProviderWrapper>
       <Navbar />

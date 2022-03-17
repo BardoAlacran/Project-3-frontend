@@ -50,7 +50,6 @@ body {
   margin: 2px;
 }
 .featureContainer {
-  border: px solid beige;
   border-radius: 3%;
   display: flex;
   justify-content: space-around;
