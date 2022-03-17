@@ -4,18 +4,21 @@ import apiService from '../services/api.service';
 
 function Home() {
   const [posts, setPosts] = useState([]);
-  //const [isFav, setIsFav] = useState([]);
+
+  const getposts = async () => {
+    try {
+      const allPosts = await apiService.getAllPosts();
+
+      setPosts(allPosts.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
-    apiService
-      .getAllPosts()
-      .then(allposts => {
-        setPosts(allposts.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    getposts();
   }, []);
-  // const handleFav = () => {};
+
   return (
     <div className="Container">
       {posts.map(post => {
@@ -28,7 +31,6 @@ function Home() {
             date={post.date}
             theme={post.theme}
             level={post.level}
-            // onFav={handleFav}
           />
         );
       })}

@@ -6,14 +6,11 @@ import RemoveFav from './RemoveFav';
 
 function AllPosts({ id, userPost, body, date, level, theme }) {
   const [isFav, setIsFav] = useState(false);
-  // const handleOnFav = () => {};
 
   useEffect(() => {
     apiService
       .getIsFav(id)
       .then(response => {
-        console.log(response.data);
-
         setIsFav(response.data.isFavorite);
       })
       .catch(error => {
