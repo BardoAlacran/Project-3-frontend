@@ -5,9 +5,6 @@ import apiService from '../services/api.service';
 function AddPost() {
   const navigate = useNavigate();
 
-  //const [body, setBody] = useState('');
-  //const [level, setLevel] = useState('');
-  //const [theme, setTheme] = useState('');
   const [newPost, setNewPost] = useState({
     body: '',
     theme: '',
@@ -15,7 +12,6 @@ function AddPost() {
   });
 
   const handlePost = e => {
-    //setNewPost(prev =>  [{...prev, [e.target.name]: e.target.value}]);
     setNewPost(prev => {
       return {
         ...prev,
@@ -23,32 +19,22 @@ function AddPost() {
       };
     });
   };
-  const handleAddSubmit = e => {
+  const handleAddSubmit = async e => {
     e.preventDefault();
+    try {
+      const postCreated = await apiService.addPost(newPost);
 
-    apiService
-      .addPost(newPost)
-      .then(postCreated => {
-        console.log(postCreated);
+      navigate(`/post/${postCreated.data._id}`);
+      // .then(postCreated => {
+      //   console.log(postCreated);
 
-        navigate(`/post/${postCreated.data._id}`);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+      //   navigate(`/post/${postCreated.data._id}`);
+      // });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  // const handleBody = e => {
-  //   setBody(e.target.value);
-  // };
-  // const handleTheme = e => {
-  //   setTheme(e.target.value);
-  // };
-  // const handleLevel = e => {
-  //   setLevel(e.target.value);
-  // };
-
-  console.log('newPost:', newPost);
   return (
     <div className="Container">
       <h1>Add Post</h1>
