@@ -15,7 +15,7 @@ function EditProfile() {
     apiService.getProfile(user._id).then(response => {
       setEditedProfile(response.data);
     });
-  }, []);
+  }, [user._id]);
 
   const handleProfile = e => {
     setEditedProfile(prev => {

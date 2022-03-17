@@ -6,18 +6,18 @@ function Profile() {
   const [profile, setProfile] = useState([]);
   const { id } = useParams();
 
+  const getProfile = async () => {
+    try {
+      const response = await apiService.getProfile(id);
+      setProfile(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
-    apiService
-      .getProfile(id)
-      .then(response => {
-        console.log(response.data);
-        setProfile(response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    getProfile();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(profile);
 
   return (
     <div>

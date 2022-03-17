@@ -40,6 +40,9 @@ class ApiService {
   getAllPosts = () => {
     return this.api.get('/');
   };
+  getOwnPosts = () => {
+    return this.api.get('/posts');
+  };
 
   getDetailPost = id => {
     return this.api.get(`/post/${id}`);
@@ -60,8 +63,25 @@ class ApiService {
   getProfile = id => {
     return this.api.get(`/profile/${id}`);
   };
+
   editProfile = body => {
     return this.api.put(`/profile/edit`, body);
+  };
+
+  getUserFavs = () => {
+    return this.api.get('favourite/favs');
+  };
+
+  getIsFav = id => {
+    return this.api.get(`favourite/${id}/fav`);
+  };
+
+  addFav = id => {
+    return this.api.post(`favourite/${id}`);
+  };
+
+  removeFav = id => {
+    return this.api.delete(`favourite/${id}/delete`);
   };
 }
 

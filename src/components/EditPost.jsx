@@ -11,10 +11,17 @@ function EditPost() {
   });
   const { id } = useParams();
 
+  const getDetail = async () => {
+    try {
+      const detail = await apiService.getDetailPost(id);
+      setEditedPost(detail.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
-    apiService.getDetailPost(id).then(response => {
-      setEditedPost(response.data);
-    });
+    getDetail();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handlePost = e => {
@@ -25,22 +32,16 @@ function EditPost() {
       };
     });
   };
-  const handleAddSubmit = e => {
+  const handleAddSubmit = async e => {
     e.preventDefault();
-
-    apiService
-      .editPost(editedPost, id)
-      .then(postEdited => {
-        console.log(postEdited);
-
-        navigate(`/post/${postEdited.data._id}`);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    try {
+      const postEdited = await apiService.editPost(editedPost, id);
+      navigate(`/post/${postEdited.data._id}`);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  console.log('newPost:', editedPost);
   return (
     <div className="Container">
       <h1>Edit Post</h1>
