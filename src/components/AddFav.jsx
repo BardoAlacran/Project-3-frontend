@@ -1,16 +1,13 @@
 import apiService from '../services/api.service';
 
 function AddFav({ id, onAdd }) {
-  // console.log('props id:', id);
-  const handleOnClick = () => {
-    apiService
-      .addFav(id)
-      .then(response => {
-        console.log('added completed:', response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+  const handleOnClick = async () => {
+    try {
+      await apiService.addFav(id);
+    } catch (error) {
+      console.log(error);
+    }
+
     onAdd();
   };
 

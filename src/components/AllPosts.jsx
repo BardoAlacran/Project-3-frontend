@@ -28,7 +28,7 @@ function AllPosts({ id, userPost, body, date, level, theme }) {
   const handleRemoveFav = () => {
     setIsFav(false);
   };
-  console.log(isFav);
+
   return (
     <>
       <article className="card">
@@ -37,7 +37,7 @@ function AllPosts({ id, userPost, body, date, level, theme }) {
             <b>{userPost.name}</b>
           </Link>
         </h2>
-        <p>{date}</p>
+        <p>{date.slice(0, 10)}</p>
         <div className="featureContainer">
           <p className="feature">{level}</p>
           <p className="feature">{theme}</p>

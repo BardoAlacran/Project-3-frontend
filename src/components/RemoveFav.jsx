@@ -1,15 +1,12 @@
 import apiService from '../services/api.service';
 
 function RemoveFav({ id, onRemove }) {
-  const handleOnClick = () => {
-    apiService
-      .removeFav(id)
-      .then(response => {
-        console.log('data:', response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+  const handleOnClick = async () => {
+    try {
+      await apiService.removeFav(id);
+    } catch (error) {
+      console.log(error);
+    }
     onRemove();
   };
 

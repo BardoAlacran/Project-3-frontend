@@ -5,7 +5,9 @@ import AddFav from './AddFav';
 import RemoveFav from './RemoveFav';
 
 function DetailPost() {
-  const [singlePost, setSinglePost] = useState({});
+  const [singlePost, setSinglePost] = useState({
+    date: Date.now(),
+  });
   const [userPost, setUserPost] = useState({});
   const [isFav, setIsFav] = useState(false);
   const { id } = useParams();
@@ -52,7 +54,7 @@ function DetailPost() {
             <b>{userPost.name}</b>
           </Link>
         </h2>
-        <p>{singlePost.date}</p>
+        <p>{singlePost.date.toString().slice(0, 10)}</p>
         <div className="featureContainer">
           <p className="feature">{singlePost.level}</p>
           <p className="feature">{singlePost.theme}</p>

@@ -21,9 +21,9 @@ function DeletePost() {
 
   useEffect(() => {
     getDetail();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   const handleDelete = async () => {
     try {
       await apiService.deletePost(id);
