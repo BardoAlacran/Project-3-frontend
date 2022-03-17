@@ -8,28 +8,29 @@ function DeletePost() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    apiService
-      .getDetailPost(id)
-      .then(response => {
-        setSinglePost(response.data);
-        const { user } = response.data;
-        setUserPost(user);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }, [id]);
+  const getDetail = async () => {
+    try {
+      const detail = await apiService.getDetailPost(id);
+      setSinglePost(detail.data);
+      const { user } = detail.data;
+      setUserPost(user);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  const handleDelete = () => {
-    apiService
-      .deletePost(id)
-      .then(() => {
-        navigate('/');
-      })
-      .catch(error => {
-        console.log(error);
-      });
+  useEffect(() => {
+    getDetail();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleDelete = async () => {
+    try {
+      await apiService.deletePost(id);
+      navigate('/');
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
