@@ -24,17 +24,12 @@ function UserProfile() {
     apiService
       .getOwnPosts({ user: user._id })
       .then(response => {
-        // console.log('1 data:', response.data);
         setPosts(response.data);
       })
       .catch(error => {
         console.log(error);
       });
   }, [user._id]);
-  // console.log('user:', user._id);
-  // console.log('profile:', profile);
-  // console.log('2 posts:', posts);
-  // console.log('user id:', user._id);
 
   useEffect(() => {
     apiService
@@ -45,7 +40,7 @@ function UserProfile() {
       .catch(error => {
         console.log(error);
       });
-  });
+  }, []);
 
   return (
     <div className="Container">
@@ -64,7 +59,7 @@ function UserProfile() {
           <b>{profile.name}</b>
         </h1>
       </article>
-      <h2>My own</h2>
+      <h2>Own posts</h2>
       {posts.map(post => {
         return (
           <AllPosts
@@ -78,8 +73,19 @@ function UserProfile() {
           />
         );
       })}
+      <h2>Favourite posts</h2>
       {favs.map(fav => {
-        return <h1 key={fav._id}>{fav._id}</h1>;
+        return (
+          <AllPosts
+            key={fav._id}
+            id={fav.post._id}
+            body={fav.post.body}
+            userPost={fav.post.user}
+            date={fav.post.date}
+            theme={fav.post.theme}
+            level={fav.post.level}
+          />
+        );
       })}
     </div>
   );
