@@ -20,7 +20,7 @@ function Profile() {
   }, []);
 
   return (
-    <div>
+    <div className="Container">
       <article className="card">
         <h1>
           <b>{profile.name}</b>

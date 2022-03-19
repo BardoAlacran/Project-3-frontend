@@ -69,8 +69,8 @@ function UserProfile() {
         </h1>
       </article>
       <h2>Own posts</h2>
-      {posts === undefined ? (
-        <p>charging...</p>
+      {posts === undefined || posts.length === 0 ? (
+        <p>Charging... Maybe you have no posts</p>
       ) : (
         posts.map(post => {
           return (
