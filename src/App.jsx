@@ -8,6 +8,7 @@ import EditProfile from './components/EditProfile';
 import IsAnon from './components/IsAnon';
 import IsPrivate from './components/IsPrivate';
 import Navbar from './components/Navbar';
+import NotFound from './components/NotFound';
 import Profile from './components/Profile';
 import UserProfile from './components/UserProfile';
 import { AuthProviderWrapper } from './context/auth.context';
@@ -58,7 +59,7 @@ function App() {
             </IsAnon>
           }
         />
-        <Route path="*" element={<div>404 Not Found</div>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </AuthProviderWrapper>
   );

@@ -41,7 +41,8 @@ function AddPost() {
 
       <form className="card" onSubmit={handleAddSubmit}>
         <label>Body:</label>
-        <input type="text" name="body" value={newPost.body} onChange={handlePost} />
+
+        <textarea type="text" name="body" value={newPost.body} onChange={handlePost} />
 
         <label>Theme:</label>
         <input type="text" name="theme" value={newPost.theme} onChange={handlePost} />

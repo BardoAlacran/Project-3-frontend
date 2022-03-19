@@ -48,7 +48,7 @@ function EditPost() {
 
       <form className="card" onSubmit={handleAddSubmit}>
         <label>Body:</label>
-        <input type="text" name="body" value={editedPost.body} onChange={handlePost} />
+        <textarea type="text" name="body" value={editedPost.body} onChange={handlePost} />
 
         <label>Theme:</label>
         <input type="text" name="theme" value={editedPost.theme} onChange={handlePost} />

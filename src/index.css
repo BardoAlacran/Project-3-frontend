@@ -41,6 +41,12 @@ body {
   padding: 5%;
   margin-bottom: 5px;
 }
+textarea {
+  width: 100%;
+}
+input {
+  width: 100%;
+}
 .buttonContainer {
   display: flex;
   justify-content: space-around;
