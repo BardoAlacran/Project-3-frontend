@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { AuthContext } from '../context/auth.context';
 import apiService from '../services/api.service';
 import AddFav from './AddFav';
 import RemoveFav from './RemoveFav';
 
 function DetailPost() {
+  const { user } = useContext(AuthContext);
   const [singlePost, setSinglePost] = useState({
     date: Date.now(),
   });
@@ -60,16 +62,19 @@ function DetailPost() {
           <p className="feature">{singlePost.theme}</p>
         </div>
         <p>{singlePost.body}</p>
-
-        <div className="buttonContainer">
-          {isFav ? <RemoveFav id={id} onRemove={handleRemoveFav} /> : <AddFav id={id} onAdd={handleAddFav} />}
-          <Link to={`/post/${id}/edit`}>
-            <button className="button">Edit</button>
-          </Link>
-          <Link to={`/post/${id}/delete`}>
-            <button className="button">Delete</button>
-          </Link>
-        </div>
+        {user._id === userPost._id && (
+          <>
+            <div className="buttonContainer">
+              {isFav ? <RemoveFav id={id} onRemove={handleRemoveFav} /> : <AddFav id={id} onAdd={handleAddFav} />}
+              <Link to={`/post/${id}/edit`}>
+                <button className="button">Edit</button>
+              </Link>
+              <Link to={`/post/${id}/delete`}>
+                <button className="button">Delete</button>
+              </Link>
+            </div>
+          </>
+        )}
       </article>
     </div>
   );

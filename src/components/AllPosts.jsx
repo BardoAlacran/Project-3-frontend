@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../context/auth.context';
 import apiService from '../services/api.service';
 import AddFav from './AddFav';
 import RemoveFav from './RemoveFav';
 
 function AllPosts({ id, userPost, body, date, level, theme }) {
+  const { user } = useContext(AuthContext);
   const [isFav, setIsFav] = useState(false);
 
   const isFavourite = async () => {
@@ -45,15 +47,19 @@ function AllPosts({ id, userPost, body, date, level, theme }) {
         <Link to={`/post/${id}`}>
           <p>{body}</p>
         </Link>
-        <div className="buttonContainer">
-          {isFav ? <RemoveFav id={id} onRemove={handleRemoveFav} /> : <AddFav id={id} onAdd={handleAddFav} />}
-          <Link to={`/post/${id}/edit`}>
-            <button className="button">Edit</button>
-          </Link>
-          <Link to={`/post/${id}/delete`}>
-            <button className="button">Delete</button>
-          </Link>
-        </div>
+        {user._id === userPost._id && (
+          <div className="buttonContainer">
+            {isFav ? <RemoveFav id={id} onRemove={handleRemoveFav} /> : <AddFav id={id} onAdd={handleAddFav} />}
+            <>
+              <Link to={`/post/${id}/edit`}>
+                <button className="button">Edit</button>
+              </Link>
+              <Link to={`/post/${id}/delete`}>
+                <button className="button">Delete</button>
+              </Link>
+            </>
+          </div>
+        )}
       </article>
     </>
   );
