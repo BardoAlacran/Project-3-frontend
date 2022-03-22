@@ -15,7 +15,7 @@ function Home() {
       };
     });
   };
-  const handleAddSubmit = async e => {
+  const handleOnSubmit = async e => {
     e.preventDefault();
     try {
       const filtered = await apiService.filterPosts(filteredPost);
@@ -43,7 +43,7 @@ function Home() {
   return (
     <div className="Container">
       <>
-        <form className="card" onSubmit={handleAddSubmit}>
+        <form className="card" onSubmit={handleOnSubmit}>
           <label>Theme:</label>
           <input type="text" name="theme" value={filteredPost.theme} onChange={handlePost} />
 
