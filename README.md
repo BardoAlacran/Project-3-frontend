@@ -21,28 +21,36 @@ you have to setup `.env` example in `.env.sample`
 
 ## Install the app
 
-​
-
-```
+````
 $ npm install
-```
-
-​
+```​
 
 ## Start & watch
 
-```
+````
+
 $ npm start
+
 ```
 
 ## Simple build for production
 
 ```
+
 $ npm run build
+
 ```
+
+## logIn / SignUp
+
+The User needs to be logged in in order to Add, Edit, Delete addFavs, removeFavs posts, so here You have the credentials for a User already created:
+
+mail: peperoni2@ironhack.com
+pwd: Peperoni2
 
 ## Links
 
-- [Slides]()
+- [Slides](https://slides.com/daniellopezrevilla/csp)
 - [Curiosity's Starship Backend](https://github.com/BardoAlacran/Project-3-backend/blob/main/README.md)
-- [Deployed version]()
+- [Deployed version](https://gracious-mahavira-15313a.netlify.app/)
+```
