@@ -41,6 +41,9 @@ $ npm run build
 
 ```
 
+
+```
+
 ## logIn / SignUp
 
 The User needs to be logged in in order to Add, Edit, Delete addFavs, removeFavs posts, so here You have the credentials for a User already created:
@@ -53,4 +56,3 @@ pwd: Peperoni2
 - [Slides](https://slides.com/daniellopezrevilla/csp)
 - [Curiosity's Starship Backend](https://github.com/BardoAlacran/Project-3-backend/blob/main/README.md)
 - [Deployed version](https://gracious-mahavira-15313a.netlify.app/)
-```
