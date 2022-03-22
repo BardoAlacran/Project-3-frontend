@@ -30,7 +30,6 @@ body {
   background: linear-gradient(to bottom, rgb(12, 1, 77), rgb(15, 15, 15)) no-repeat;
   color: aqua;
 }
-
 .Container {
   padding-top: 15%;
   padding-bottom: 10px;
@@ -47,6 +46,9 @@ textarea {
 input {
   width: 100%;
 }
+select {
+  width: 100%;
+}
 .buttonContainer {
   display: flex;
   justify-content: space-around;
@@ -61,11 +63,14 @@ input {
   border-radius: 3%;
   display: flex;
   justify-content: space-around;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 .feature {
-  /* background-color: blueviolet; */
+  background-color: rgb(170, 212, 173);
   border-radius: 20%;
   color: green;
+  padding: 1%;
 }
 .warning {
   color: red;

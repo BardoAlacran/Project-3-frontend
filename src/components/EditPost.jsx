@@ -51,10 +51,22 @@ function EditPost() {
         <textarea type="text" name="body" value={editedPost.body} onChange={handlePost} />
 
         <label>Theme:</label>
-        <input type="text" name="theme" value={editedPost.theme} onChange={handlePost} />
+        <select type="text" name="theme" value={editedPost.theme} onChange={handlePost}>
+          <option value="Science">Science</option>
+          <option value="Anime">Anime</option>
+          <option value="Computing">Computing</option>
+          <option value="Gardening">Gardening</option>
+          <option value="Gaming">Gaming</option>
+          <option value="Curiosities">Curiosities</option>
+        </select>
 
         <label>Level:</label>
-        <input type="text" name="level" value={editedPost.level} onChange={handlePost} />
+        <select type="text" name="level" value={editedPost.level} onChange={handlePost}>
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+          <option value="Godlike">Godlike</option>
+        </select>
 
         <button className="button" type="submit">
           Edit
