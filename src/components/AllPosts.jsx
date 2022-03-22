@@ -81,19 +81,6 @@ function AllPosts({ id, userPost, body, date, level, theme }) {
         <Link to={`/post/${id}`}>
           <p>{body}</p>
         </Link>
-        {/* {user._id === userPost._id && (
-          <div className="buttonContainer">
-            {isFav ? <RemoveFav id={id} onRemove={handleRemoveFav} /> : <AddFav id={id} onAdd={handleAddFav} />}
-            <>
-              <Link to={`/post/${id}/edit`}>
-                <button className="button">Edit</button>
-              </Link>
-              <Link to={`/post/${id}/delete`}>
-                <button className="button">Delete</button>
-              </Link>
-            </>
-          </div>
-        )} */}
       </article>
     </>
   );

@@ -39,7 +39,7 @@ function EditProfile() {
         console.log(error);
       });
   };
-  // console.log('user:', user);
+
   console.log('editedProfile:', editedProfile);
   return (
     <div className="Container">

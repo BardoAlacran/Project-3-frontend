@@ -13,7 +13,6 @@ function Navbar() {
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
           <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
         </svg>
-        {/* <button>Home</button> */}
       </Link>
 
       {isLoggedIn && (
@@ -26,7 +25,6 @@ function Navbar() {
                 clipRule="evenodd"
               />
             </svg>
-            {/* <button>Add Post</button> */}
           </Link>
 
           <Link to={'/profile/userprofile'}>
@@ -44,7 +42,6 @@ function Navbar() {
                 d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            {/* <span>{user && user.name}</span> */}
           </Link>
         </>
       )}

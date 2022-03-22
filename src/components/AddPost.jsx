@@ -27,11 +27,6 @@ function AddPost() {
       const postCreated = await apiService.addPost(newPost);
 
       navigate(`/post/${postCreated.data._id}`);
-      // .then(postCreated => {
-      //   console.log(postCreated);
-
-      //   navigate(`/post/${postCreated.data._id}`);
-      // });
     } catch (error) {
       console.log(error);
     }
