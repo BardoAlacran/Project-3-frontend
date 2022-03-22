@@ -39,7 +39,7 @@ function Home() {
   useEffect(() => {
     getposts();
   }, []);
-  console.log(posts);
+
   return (
     <div className="Container">
       <>
