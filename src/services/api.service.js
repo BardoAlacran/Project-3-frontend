@@ -83,6 +83,9 @@ class ApiService {
   removeFav = id => {
     return this.api.delete(`favourite/${id}/delete`);
   };
+  filterPosts = body => {
+    return this.api.post('/filter', body);
+  };
 }
 
 // Create one instance (object) of the service
