@@ -32,7 +32,6 @@ function AddPost() {
     }
   };
 
-  console.log(newPost);
   if (!isLoggedIn) {
     return (
       <div className="Container">
