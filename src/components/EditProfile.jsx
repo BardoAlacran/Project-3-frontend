@@ -30,9 +30,7 @@ function EditProfile() {
 
     apiService
       .editProfile(editedProfile)
-      .then(profileEdited => {
-        console.log('profile edited:', profileEdited);
-
+      .then(() => {
         navigate('/profile/userprofile');
       })
       .catch(error => {
@@ -40,7 +38,6 @@ function EditProfile() {
       });
   };
 
-  console.log('editedProfile:', editedProfile);
   return (
     <div className="Container">
       <h1>Edit Profile</h1>

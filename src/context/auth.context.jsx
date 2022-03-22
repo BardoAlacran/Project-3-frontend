@@ -21,7 +21,6 @@ function AuthProviderWrapper(props) {
 
   const login = async requestBody => {
     return apiService.login(requestBody).then(response => {
-      console.log('JWT token', response.data.authToken);
       storeToken(response.data.authToken);
       authenticateUser();
     });
